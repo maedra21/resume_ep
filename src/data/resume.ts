@@ -213,6 +213,8 @@ export const projects: ResumeProject[] = [
     title: "Solecover",
     subtitle: "Aufbau einer eigenen Streetwear-Marke",
     when: "2023 – 2024",
+    href: "/projekte/solecover",
+    coverImage: "/portfolio/solecover (1).jpg",
     points: [
       "Entwicklung des visuellen und konzeptionellen Auftritts der Marke",
       "Gestaltung und Umsetzung digitaler Inhalte für Social Media und Web",
@@ -239,6 +241,12 @@ export const projects: ResumeProject[] = [
     when: "2024",
     points: ["Gestaltung und dynamische Animation von Präsentationsinhalten"],
   },
+];
+
+export const solecoverGallery = [
+  { file: "/portfolio/solecover (1).jpg", title: "Solecover – Markenauftritt", subtitle: "Brand & Visual Identity" },
+  { file: "/portfolio/solecover (2).jpg", title: "Solecover – Produktpräsentation", subtitle: "Streetwear & Content" },
+  { file: "/portfolio/solecover (3).jpg", title: "Solecover – Social Media", subtitle: "Digitaler Auftritt" },
 ];
 
 /** Speisekarte Gallery Items (9 Spreads) */

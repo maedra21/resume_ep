@@ -14,6 +14,7 @@ import { Route as ProjekteIndexRouteImport } from './routes/projekte/index'
 import { Route as ProjekteBunkerRouteImport } from './routes/projekte/bunker'
 import { Route as ProjekteKinderbuecherRouteImport } from './routes/projekte/kinderbuecher'
 import { Route as ProjekteMbankMerchRouteImport } from './routes/projekte/mbank-merch'
+import { Route as ProjekteSolecoverRouteImport } from './routes/projekte/solecover'
 import { Route as ProjekteSpeisekarteRouteImport } from './routes/projekte/speisekarte'
 
 const IndexRoute = IndexRouteImport.update({
@@ -41,6 +42,11 @@ const ProjekteMbankMerchRoute = ProjekteMbankMerchRouteImport.update({
   path: '/projekte/mbank-merch',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjekteSolecoverRoute = ProjekteSolecoverRouteImport.update({
+  id: '/projekte/solecover',
+  path: '/projekte/solecover',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjekteSpeisekarteRoute = ProjekteSpeisekarteRouteImport.update({
   id: '/projekte/speisekarte',
   path: '/projekte/speisekarte',
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/projekte/bunker': typeof ProjekteBunkerRoute
   '/projekte/kinderbuecher': typeof ProjekteKinderbuecherRoute
   '/projekte/mbank-merch': typeof ProjekteMbankMerchRoute
+  '/projekte/solecover': typeof ProjekteSolecoverRoute
   '/projekte/speisekarte': typeof ProjekteSpeisekarteRoute
   '/projekte/': typeof ProjekteIndexRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/projekte/bunker': typeof ProjekteBunkerRoute
   '/projekte/kinderbuecher': typeof ProjekteKinderbuecherRoute
   '/projekte/mbank-merch': typeof ProjekteMbankMerchRoute
+  '/projekte/solecover': typeof ProjekteSolecoverRoute
   '/projekte/speisekarte': typeof ProjekteSpeisekarteRoute
   '/projekte': typeof ProjekteIndexRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/projekte/bunker': typeof ProjekteBunkerRoute
   '/projekte/kinderbuecher': typeof ProjekteKinderbuecherRoute
   '/projekte/mbank-merch': typeof ProjekteMbankMerchRoute
+  '/projekte/solecover': typeof ProjekteSolecoverRoute
   '/projekte/speisekarte': typeof ProjekteSpeisekarteRoute
   '/projekte/': typeof ProjekteIndexRoute
 }
@@ -79,6 +88,7 @@ export interface FileRouteTypes {
     | '/projekte/bunker'
     | '/projekte/kinderbuecher'
     | '/projekte/mbank-merch'
+    | '/projekte/solecover'
     | '/projekte/speisekarte'
     | '/projekte/'
   fileRoutesByTo: FileRoutesByTo
@@ -87,6 +97,7 @@ export interface FileRouteTypes {
     | '/projekte/bunker'
     | '/projekte/kinderbuecher'
     | '/projekte/mbank-merch'
+    | '/projekte/solecover'
     | '/projekte/speisekarte'
     | '/projekte'
   id:
@@ -95,6 +106,7 @@ export interface FileRouteTypes {
     | '/projekte/bunker'
     | '/projekte/kinderbuecher'
     | '/projekte/mbank-merch'
+    | '/projekte/solecover'
     | '/projekte/speisekarte'
     | '/projekte/'
   fileRoutesById: FileRoutesById
@@ -104,6 +116,7 @@ export interface RootRouteChildren {
   ProjekteBunkerRoute: typeof ProjekteBunkerRoute
   ProjekteKinderbuecherRoute: typeof ProjekteKinderbuecherRoute
   ProjekteMbankMerchRoute: typeof ProjekteMbankMerchRoute
+  ProjekteSolecoverRoute: typeof ProjekteSolecoverRoute
   ProjekteSpeisekarteRoute: typeof ProjekteSpeisekarteRoute
   ProjekteIndexRoute: typeof ProjekteIndexRoute
 }
@@ -145,6 +158,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjekteMbankMerchRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projekte/solecover': {
+      id: '/projekte/solecover'
+      path: '/projekte/solecover'
+      fullPath: '/projekte/solecover'
+      preLoaderRoute: typeof ProjekteSolecoverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projekte/speisekarte': {
       id: '/projekte/speisekarte'
       path: '/projekte/speisekarte'
@@ -160,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProjekteBunkerRoute: ProjekteBunkerRoute,
   ProjekteKinderbuecherRoute: ProjekteKinderbuecherRoute,
   ProjekteMbankMerchRoute: ProjekteMbankMerchRoute,
+  ProjekteSolecoverRoute: ProjekteSolecoverRoute,
   ProjekteSpeisekarteRoute: ProjekteSpeisekarteRoute,
   ProjekteIndexRoute: ProjekteIndexRoute,
 }
