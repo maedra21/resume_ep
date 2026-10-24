@@ -280,21 +280,6 @@ export function ResumePage() {
                         Case Study
                       </span>
                     )}
-                    {project.key === "bunker" && (
-                      <div className="relative mt-4 flex aspect-[16/10] max-w-40 items-center justify-center overflow-hidden border border-rule bg-night text-center text-paper">
-                        <img
-                          src="/portfolio/bunker (1).png"
-                          alt="BUNKER 404 – Projektcover"
-                          className="absolute inset-0 size-full object-cover"
-                          onError={(event) => { event.currentTarget.style.display = "none"; }}
-                          onLoad={(event) => { event.currentTarget.nextElementSibling?.setAttribute("hidden", ""); }}
-                        />
-                        <div className="relative px-2" aria-hidden="true">
-                          <span className="block text-[9px] font-semibold uppercase tracking-widest text-gold">Interactive Game</span>
-                          <span className="mt-1 block font-display text-sm tracking-wider">BUNKER 404</span>
-                        </div>
-                      </div>
-                    )}
                   </div>
 
                   <div className="flex-1">
