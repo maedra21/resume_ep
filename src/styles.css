@@ -1,0 +1,197 @@
+@import "tailwindcss";
+@import "@fontsource/source-sans-3/latin-400.css";
+@import "@fontsource/source-sans-3/latin-500.css";
+@import "@fontsource/source-sans-3/latin-600.css";
+@import "@fontsource/source-sans-3/latin-700.css";
+@import "@fontsource/cormorant-garamond/latin-500.css";
+@import "@fontsource/cormorant-garamond/latin-600.css";
+@import "@fontsource/cormorant-garamond/latin-700.css";
+@import "@fontsource/cormorant-garamond/latin-500-italic.css";
+@import "@fontsource/cormorant-garamond/latin-600-italic.css";
+
+@theme {
+  --font-sans: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+
+  --color-night: #00003d;
+  --color-reflex: #000099;
+  --color-gold: #ffcc00;
+  --color-gilt: #6a4b00;
+  --color-paper: #f3efe4;
+  --color-sheet: #e7e0d0;
+  --color-ink: #101428;
+  --color-muted: #3e3c4a;
+  --color-mist: #ddd8ea;
+  --color-rule: #ddd4c4;
+
+  --radius-none: 0;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-night);
+    color: var(--color-paper);
+    font-family: var(--font-sans);
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--color-gold);
+    color: var(--color-night);
+  }
+}
+
+/* Europa-Park atmospheric night-sky advertising gradient */
+.sky {
+  background-color: var(--color-reflex);
+  background-image: linear-gradient(180deg, #00003d 0%, #00005a 45%, #000099 100%);
+}
+
+/* Fallback static constellation for reduced-motion or canvas failure */
+.constellation {
+  background-image:
+    radial-gradient(2px 2px at 18% 22%, #ffcc00 55%, transparent 56%),
+    radial-gradient(1.5px 1.5px at 72% 16%, #f3efe4 55%, transparent 56%),
+    radial-gradient(1px 1px at 84% 30%, #ffcc00 55%, transparent 56%),
+    radial-gradient(2.5px 2.5px at 90% 12%, #ffcc00 55%, transparent 56%),
+    radial-gradient(1px 1px at 40% 10%, #f3efe4 50%, transparent 52%),
+    radial-gradient(1.5px 1.5px at 96% 48%, #f3efe4 50%, transparent 52%),
+    radial-gradient(1px 1px at 62% 8%, #ffcc00 50%, transparent 52%),
+    radial-gradient(2px 2px at 8% 70%, #ffcc00 45%, transparent 48%),
+    radial-gradient(1px 1px at 28% 84%, #f3efe4 45%, transparent 48%);
+}
+
+/* Staggered entrance animation for hero */
+.rise {
+  animation: rise 540ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Viewport reveal transition */
+.reveal-init {
+  opacity: 0.05;
+  transform: translateY(16px);
+  transition: opacity 520ms cubic-bezier(0.16, 1, 0.3, 1), transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .rise,
+  .reveal-init,
+  .reveal-visible {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Editorial Print Styles (A4 PDF export) */
+@media print {
+  @page {
+    margin: 1.2cm 1.4cm;
+    size: A4 portrait;
+  }
+
+  *,
+  *::before,
+  *::after {
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #101428 !important;
+    font-size: 11pt !important;
+    line-height: 1.45 !important;
+  }
+
+  .sky {
+    background: #00003d !important;
+    color: #f3efe4 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .sky h1,
+  .sky p,
+  .sky span,
+  .sky dt,
+  .sky dd {
+    color-adjust: exact !important;
+  }
+
+  article,
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+}
