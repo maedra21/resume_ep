@@ -68,7 +68,7 @@ export function ResumePage() {
             <Star className="size-4 shrink-0 text-gold" />
             <span className="truncate text-sm font-semibold tracking-wide">{candidate.name}</span>
             <span className="hidden sm:inline text-xs text-mist/70 tracking-normal border-l border-gold/25 pl-2.5">
-              {candidate.role} · {candidate.company}
+              Bewerbung um ein Praktikum · {candidate.company}
             </span>
           </a>
 
@@ -129,7 +129,7 @@ export function ResumePage() {
               </div>
 
               <p className="text-xs font-semibold uppercase tracking-widest text-gold">
-                Bewerbung · {candidate.role} · {candidate.company}
+                Bewerbung um ein Praktikum · {candidate.role} · {candidate.company}
               </p>
 
               {/* Candidate Name: First Name in Paper + Last Name in Italic Gold */}
@@ -139,9 +139,9 @@ export function ResumePage() {
               </h1>
 
               <p className="mt-6 max-w-xl text-lg text-mist leading-relaxed font-sans">
-                Informationssysteme und Technologien, Schwerpunkt Medienindustrie.
-                Visuelle Gestaltung, Markenaufbau, mehrseitige Print-Layouts und digitale Medien — vom Konzept
-                bis zur Reinzeichnung.
+                Lebenslauf und Bewerbungsmappe für ein Praktikum im Bereich Werbung / Grafik bei MACK Media (Europa-Park).
+                Absolvent der Informationssysteme und Technologien mit Schwerpunkt Medienindustrie; Erfahrung in visueller Gestaltung,
+                Markenaufbau, Print-Layouts und digitalen Medien.
               </p>
 
               {/* Visible Metadata & Location */}
@@ -466,7 +466,7 @@ export function ResumePage() {
               <Star className="size-3" />
             </div>
             <p className="font-display text-3xl leading-none text-paper md:text-4xl">
-              Praktikum ab {candidate.start} · {candidate.company}
+              Bewerbung um ein Praktikum ab {candidate.start} · {candidate.company}
             </p>
             <p className="mt-3 max-w-md text-base text-mist">
               {candidate.duration} im Bereich {candidate.role}. {candidate.resort}.

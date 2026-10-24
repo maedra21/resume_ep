@@ -8,7 +8,7 @@ export const candidate = {
   name: "Atai Duisheev",
   firstName: "Atai",
   lastName: "Duisheev",
-  role: "Praktikum Werbung / Grafik",
+  role: "Werbung / Grafik",
   company: "MACK Media",
   resort: "Europa-Park Erlebnis-Resort, Rust",
   location: "Rust, Deutschland",
@@ -71,7 +71,7 @@ export const workExperience = [
   {
     title: "Designer & Illustrator – personalisierte Kinderbücher (KI-gestützt)",
     place: "Remote / Projektarbeit",
-    meta: "2024 – heute",
+    meta: "2024",
     points: [
       "Konzeption und Gestaltung personalisierter Kinderbücher, in denen echte Kinder die Hauptfiguren der Geschichte sind",
       "KI-gestützte Illustration in Kombination mit manueller Bildrichtung, digitaler Retusche und Layout",
@@ -82,7 +82,7 @@ export const workExperience = [
   {
     title: "Mitarbeiter im Restaurantbereich",
     place: "Europa-Park Erlebnis-Resort",
-    meta: "Rust, Deutschland · 2024 – heute",
+    meta: "Rust, Deutschland · 2025 – heute",
     points: [
       "Unterstützung des Restaurantbetriebs im laufenden Tagesgeschäft vor Ort in Rust",
       "Mitarbeit bei der Sicherstellung eines gepflegten und serviceorientierten Gästebereichs",
@@ -90,9 +90,17 @@ export const workExperience = [
     ],
   },
   {
+    title: "Aushilfe / Verkaufshelfer im Verkaufsraum",
+    place: "Karl’s Erlebnis-Dorf",
+    meta: "Juni – Ende August (3 Monate)",
+    points: [
+      "Unterstützung im Verkaufsraum und bei der Betreuung der Besucherinnen und Besucher",
+    ],
+  },
+  {
     title: "Mitarbeiter im Onlinehandel / Operator",
     place: "Kivano.kg",
-    meta: "Bischkek, Kirgisistan · 2023",
+    meta: "Bischkek, Kirgisistan · 2025",
     points: [
       "Mitarbeit in den operativen Abläufen eines etablierten Online-Shops",
       "Bestellabwicklung, Produktpräsentation, Katalogpflege und operative Kundenbetreuung",
@@ -188,7 +196,7 @@ export const projects: ResumeProject[] = [
     mark: "Illustration & AI",
     title: "Personalisierte Kinderbücher",
     subtitle: "Illustration, Art-Direction & Buchlayout (KI-gestützt)",
-    when: "2024 – heute",
+    when: "2024",
     href: "/projekte/kinderbuecher",
     coverImage: "/portfolio/aylin-illustration-1.png",
     featured: true,
@@ -211,18 +219,6 @@ export const projects: ResumeProject[] = [
       "Mitwirkung an der Konzeption und Gestaltung des Online-Shops",
       "Planung und Umsetzung von Marketing- und Verkaufsaktivitäten",
       "Organisation von Kundenkommunikation und operativen Verkaufsprozessen",
-    ],
-  },
-  {
-    key: "instagram" as const,
-    mark: "Social & E-Com",
-    title: "Instagram-Auftritt",
-    subtitle: "Shop für Winteraccessoires",
-    when: "2022 – 2023",
-    points: [
-      "Gestaltung des visuellen Auftritts und der Produktpräsentation auf Instagram",
-      "Unterstützung der Geschäftsprozesse von der Beschaffung bis zur Auslieferung",
-      "Kundenkommunikation und operative Verkaufsabwicklung",
     ],
   },
   {

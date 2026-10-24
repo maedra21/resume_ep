@@ -25,7 +25,7 @@ function ProjectsOverviewPage() {
         {/* Intro notice */}
         <div className="border-l-2 border-reflex pl-5 py-1">
           <p className="text-base text-ink leading-relaxed">
-            Als angehender Praktikant im Bereich Werbung und Grafik verbinde ich strukturiertes Medien-Know-how mit gestalterischer Neugier. Nachfolgend finden Sie detaillierte Case Studies zu mehrseitigem Print-Layout und moderner KI-unterstützter Buchillustration sowie weitere Arbeiten.
+            Diese Bewerbungsmappe für ein Praktikum im Bereich Werbung und Grafik bei MACK Media zeigt ausgewählte Projekte aus Print-Layout, digitaler Gestaltung und Illustration.
           </p>
         </div>
 

@@ -85,7 +85,7 @@ function BunkerCasePage() {
               onError={(event) => { event.currentTarget.style.display = "none"; }}
               onLoad={(event) => { event.currentTarget.nextElementSibling?.setAttribute("hidden", ""); }}
             />
-            <div className="relative z-10 max-w-xl border border-gold/40 bg-night/90 px-8 py-10 text-paper shadow-lg">
+            <div className="relative z-10 flex max-w-xl flex-col items-center border border-gold/40 bg-night/90 px-8 py-10 text-paper shadow-lg">
               <Gamepad2 className="mx-auto size-8 text-gold" aria-hidden="true" />
               <p className="mt-4 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
                 Interactive Game · 2026
@@ -94,6 +94,15 @@ function BunkerCasePage() {
                 BUNKER 404
               </p>
               <p className="mt-3 text-sm text-mist">Multiplayer-Browsergame · eigene Räume · individuelle Modifikatoren</p>
+              <a
+                href={gameUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 border border-gilt bg-gilt px-6 py-3 text-xs font-semibold uppercase tracking-widest text-night transition-colors hover:border-gold hover:bg-gold"
+              >
+                <span>Spiel starten</span>
+                <ExternalLink className="size-3.5" />
+              </a>
             </div>
           </div>
         </section>
@@ -131,7 +140,7 @@ function BunkerCasePage() {
           </div>
         </section>
 
-        <section className="flex flex-col gap-4 border-t border-rule pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <section className="flex flex-col items-center gap-4 border-t border-rule pt-8 sm:flex-row sm:justify-center">
           <a
             href="#projektbeschreibung"
             className="inline-flex min-h-11 items-center justify-center gap-2 border border-reflex px-5 py-3 text-xs font-semibold uppercase tracking-widest text-reflex transition-colors hover:bg-reflex hover:text-paper"
@@ -139,24 +148,21 @@ function BunkerCasePage() {
             <span>Case Study ansehen</span>
             <ArrowRight className="size-3.5" />
           </a>
-          <a
-            href={gameUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center justify-center gap-2 border border-gilt bg-gilt px-6 py-3 text-xs font-semibold uppercase tracking-widest text-night transition-colors hover:border-gold hover:bg-gold"
-          >
-            <span>Spiel starten</span>
-            <ExternalLink className="size-3.5" />
-          </a>
         </section>
 
-        <div className="border-t border-rule pt-8">
+        <div className="flex flex-col gap-4 border-t border-rule pt-8 sm:flex-row sm:items-center sm:justify-between">
           <a
             href="/projekte"
             className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-reflex transition-colors hover:text-ink"
           >
             <ArrowLeft className="size-3.5" />
             <span>Zurück zur Projektübersicht</span>
+          </a>
+          <a
+            href="/projekte/speisekarte"
+            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-gilt transition-colors hover:text-ink"
+          >
+            <span>Nächstes Projekt: Speisekarte →</span>
           </a>
         </div>
       </div>
