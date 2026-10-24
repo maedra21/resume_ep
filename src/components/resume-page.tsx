@@ -68,7 +68,7 @@ export function ResumePage() {
             <Star className="size-4 shrink-0 text-gold" />
             <span className="truncate text-sm font-semibold tracking-wide">{candidate.name}</span>
             <span className="hidden sm:inline text-xs text-mist/70 tracking-normal border-l border-gold/25 pl-2.5">
-              Bewerbung um ein Praktikum · {candidate.company}
+              Initiativbewerbung · {candidate.company}
             </span>
           </a>
 
