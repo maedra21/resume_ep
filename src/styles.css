@@ -100,12 +100,12 @@
   z-index: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(90deg, #020d26 0%, rgb(2 13 38 / 96%) 22%, rgb(2 13 38 / 82%) 40%, rgb(2 13 38 / 28%) 70%, rgb(2 13 38 / 8%) 100%),
-    linear-gradient(0deg, #020d26 0%, rgb(2 13 38 / 82%) 8%, transparent 43%),
+    linear-gradient(90deg, #020d26 0%, rgb(2 13 38 / 94%) 18%, rgb(2 13 38 / 70%) 38%, rgb(2 13 38 / 16%) 68%, rgb(2 13 38 / 4%) 100%),
+    linear-gradient(0deg, #020d26 0%, rgb(2 13 38 / 68%) 8%, transparent 48%),
     url("/hero/hero-bg.png");
   background-repeat: no-repeat;
-  background-size: 100% 100%, 100% 100%, cover;
-  background-position: center, center, right center;
+  background-size: 100% 100%, 100% 100%, auto 118%;
+  background-position: center, center, right 42%;
 }
 
 .hero-shell {
@@ -314,10 +314,10 @@
   .hero-art {
     opacity: 0.82;
     background-image:
-      linear-gradient(90deg, rgb(2 13 38 / 94%) 0%, rgb(2 13 38 / 80%) 48%, rgb(2 13 38 / 46%) 100%),
-      linear-gradient(0deg, #020d26 3%, rgb(2 13 38 / 76%) 18%, transparent 58%),
+      linear-gradient(90deg, rgb(2 13 38 / 84%) 0%, rgb(2 13 38 / 62%) 48%, rgb(2 13 38 / 20%) 100%),
+      linear-gradient(0deg, #020d26 3%, rgb(2 13 38 / 64%) 18%, transparent 58%),
       url("/hero/hero-bg.png");
-    background-size: 100% 100%, 100% 100%, auto 62%;
+    background-size: 100% 100%, 100% 100%, auto 74%;
     background-position: center, center, right top;
   }
 
