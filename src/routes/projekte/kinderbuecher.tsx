@@ -206,7 +206,7 @@ function KinderbuecherCasePage() {
           </a>
 
           <a
-            href="/projekte"
+            href="/#projekte"
             className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-gilt hover:text-ink transition-colors"
           >
             <span>Alle Projekte ansehen →</span>

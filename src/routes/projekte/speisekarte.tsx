@@ -132,7 +132,7 @@ function SpeisekarteCasePage() {
         {/* Back Link */}
         <div className="border-t border-rule pt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <a
-            href="/projekte"
+            href="/#projekte"
             className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-reflex hover:text-ink transition-colors"
           >
             <ArrowLeft className="size-3.5" />

@@ -14,6 +14,7 @@ import { Route as ProjekteIndexRouteImport } from './routes/projekte/index'
 import { Route as ProjekteBunkerRouteImport } from './routes/projekte/bunker'
 import { Route as ProjekteKinderbuecherRouteImport } from './routes/projekte/kinderbuecher'
 import { Route as ProjekteMbankMerchRouteImport } from './routes/projekte/mbank-merch'
+import { Route as ProjekteNumizmatRouteImport } from './routes/projekte/numizmat'
 import { Route as ProjekteSolecoverRouteImport } from './routes/projekte/solecover'
 import { Route as ProjekteSpeisekarteRouteImport } from './routes/projekte/speisekarte'
 
@@ -42,6 +43,11 @@ const ProjekteMbankMerchRoute = ProjekteMbankMerchRouteImport.update({
   path: '/projekte/mbank-merch',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjekteNumizmatRoute = ProjekteNumizmatRouteImport.update({
+  id: '/projekte/numizmat',
+  path: '/projekte/numizmat',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjekteSolecoverRoute = ProjekteSolecoverRouteImport.update({
   id: '/projekte/solecover',
   path: '/projekte/solecover',
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/projekte/bunker': typeof ProjekteBunkerRoute
   '/projekte/kinderbuecher': typeof ProjekteKinderbuecherRoute
   '/projekte/mbank-merch': typeof ProjekteMbankMerchRoute
+  '/projekte/numizmat': typeof ProjekteNumizmatRoute
   '/projekte/solecover': typeof ProjekteSolecoverRoute
   '/projekte/speisekarte': typeof ProjekteSpeisekarteRoute
   '/projekte/': typeof ProjekteIndexRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByTo {
   '/projekte/bunker': typeof ProjekteBunkerRoute
   '/projekte/kinderbuecher': typeof ProjekteKinderbuecherRoute
   '/projekte/mbank-merch': typeof ProjekteMbankMerchRoute
+  '/projekte/numizmat': typeof ProjekteNumizmatRoute
   '/projekte/solecover': typeof ProjekteSolecoverRoute
   '/projekte/speisekarte': typeof ProjekteSpeisekarteRoute
   '/projekte': typeof ProjekteIndexRoute
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/projekte/bunker': typeof ProjekteBunkerRoute
   '/projekte/kinderbuecher': typeof ProjekteKinderbuecherRoute
   '/projekte/mbank-merch': typeof ProjekteMbankMerchRoute
+  '/projekte/numizmat': typeof ProjekteNumizmatRoute
   '/projekte/solecover': typeof ProjekteSolecoverRoute
   '/projekte/speisekarte': typeof ProjekteSpeisekarteRoute
   '/projekte/': typeof ProjekteIndexRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/projekte/bunker'
     | '/projekte/kinderbuecher'
     | '/projekte/mbank-merch'
+    | '/projekte/numizmat'
     | '/projekte/solecover'
     | '/projekte/speisekarte'
     | '/projekte/'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/projekte/bunker'
     | '/projekte/kinderbuecher'
     | '/projekte/mbank-merch'
+    | '/projekte/numizmat'
     | '/projekte/solecover'
     | '/projekte/speisekarte'
     | '/projekte'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/projekte/bunker'
     | '/projekte/kinderbuecher'
     | '/projekte/mbank-merch'
+    | '/projekte/numizmat'
     | '/projekte/solecover'
     | '/projekte/speisekarte'
     | '/projekte/'
@@ -116,6 +128,7 @@ export interface RootRouteChildren {
   ProjekteBunkerRoute: typeof ProjekteBunkerRoute
   ProjekteKinderbuecherRoute: typeof ProjekteKinderbuecherRoute
   ProjekteMbankMerchRoute: typeof ProjekteMbankMerchRoute
+  ProjekteNumizmatRoute: typeof ProjekteNumizmatRoute
   ProjekteSolecoverRoute: typeof ProjekteSolecoverRoute
   ProjekteSpeisekarteRoute: typeof ProjekteSpeisekarteRoute
   ProjekteIndexRoute: typeof ProjekteIndexRoute
@@ -158,6 +171,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjekteMbankMerchRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projekte/numizmat': {
+      id: '/projekte/numizmat'
+      path: '/projekte/numizmat'
+      fullPath: '/projekte/numizmat'
+      preLoaderRoute: typeof ProjekteNumizmatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projekte/solecover': {
       id: '/projekte/solecover'
       path: '/projekte/solecover'
@@ -180,6 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProjekteBunkerRoute: ProjekteBunkerRoute,
   ProjekteKinderbuecherRoute: ProjekteKinderbuecherRoute,
   ProjekteMbankMerchRoute: ProjekteMbankMerchRoute,
+  ProjekteNumizmatRoute: ProjekteNumizmatRoute,
   ProjekteSolecoverRoute: ProjekteSolecoverRoute,
   ProjekteSpeisekarteRoute: ProjekteSpeisekarteRoute,
   ProjekteIndexRoute: ProjekteIndexRoute,

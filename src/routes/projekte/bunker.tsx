@@ -152,7 +152,7 @@ function BunkerCasePage() {
 
         <div className="flex flex-col gap-4 border-t border-rule pt-8 sm:flex-row sm:items-center sm:justify-between">
           <a
-            href="/projekte"
+            href="/#projekte"
             className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-reflex transition-colors hover:text-ink"
           >
             <ArrowLeft className="size-3.5" />

@@ -3,7 +3,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Atai Duisheev — Bewerbung Praktikum Werbung & Grafik | MACK Media";
+const APP_NAME = "Atai Duisheev — Initiativbewerbung Werbung & Grafik | MACK Media";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -14,14 +14,14 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Bewerbungsmappe von Atai Duisheev für ein 3-monatiges Praktikum im Bereich Werbung und Grafik bei MACK Media (Europa-Park Erlebnis-Resort, Rust) ab März 2027.",
+          "Bewerbungsmappe von Atai Duisheev für eine Initiativbewerbung im Bereich Werbung und Grafik bei MACK Media (Europa-Park Erlebnis-Resort, Rust).",
       },
       {
         name: "keywords",
         content:
-          "Atai Duisheev, Bewerbung, Praktikum Werbung Grafik, MACK Media, Europa-Park Rust, Grafikdesign, Branding, Content-Erstellung, Photoshop, Illustrator, Premiere Pro, Figma",
+          "Atai Duisheev, Initiativbewerbung, Werbung Grafik, MACK Media, Europa-Park Rust, Grafikdesign, Branding, Content-Erstellung, Photoshop, Illustrator, Premiere Pro, Figma",
       },
-      { name: "theme-color", content: "#00003d" },
+      { name: "theme-color", content: "#020d26" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },

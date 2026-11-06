@@ -57,35 +57,36 @@ export function StarfieldCanvas({ className = "", density = "hero" }: StarfieldC
 
     const isMobile = width < 640;
     const starCount = isMobile
-      ? density === "hero" ? 34 : 20
-      : density === "hero" ? 76 : 42;
+      ? density === "hero" ? 46 : 28
+      : density === "hero" ? 100 : 56;
 
     const stars: Star[] = [];
-    const GOLD = "#ffcc00";
-    const WARM_WHITE = "#f3efe4";
-    const MIST = "#ddd8ea";
+    const GOLD = "#ffc52e";
+    const CHAMPAGNE = "#d9a72e";
+    const WARM_WHITE = "#f1f3fa";
+    const MIST = "#aab8d6";
 
     for (let i = 0; i < starCount; i++) {
       const rand = Math.random();
       let layer = 0;
-      let size = 0.8 + Math.random() * 0.5;
-      let baseAlpha = 0.25 + Math.random() * 0.3;
+      let size = 0.95 + Math.random() * 0.55;
+      let baseAlpha = 0.34 + Math.random() * 0.2;
       let color = MIST;
       let isAccent = false;
 
       if (rand > 0.84) {
         // Foreground accent stars (Europa-Park Gold)
         layer = 2;
-        size = 1.8 + Math.random() * 1.2;
-        baseAlpha = 0.75 + Math.random() * 0.25;
+        size = 2.2 + Math.random() * 1.4;
+        baseAlpha = 0.78 + Math.random() * 0.12;
         color = GOLD;
         isAccent = Math.random() > 0.45;
       } else if (rand > 0.5) {
         // Mid layer
         layer = 1;
-        size = 1.2 + Math.random() * 0.6;
-        baseAlpha = 0.45 + Math.random() * 0.35;
-        color = Math.random() > 0.35 ? WARM_WHITE : GOLD;
+        size = 1.45 + Math.random() * 0.8;
+        baseAlpha = 0.54 + Math.random() * 0.25;
+        color = Math.random() > 0.62 ? GOLD : CHAMPAGNE;
       }
 
       stars.push({
@@ -119,6 +120,8 @@ export function StarfieldCanvas({ className = "", density = "hero" }: StarfieldC
     ) => {
       c.save();
       c.fillStyle = color;
+      c.shadowColor = color;
+      c.shadowBlur = arm >= 6 ? 11 : 6;
       c.beginPath();
       c.moveTo(cx, cy - arm);
       c.quadraticCurveTo(cx, cy, cx + arm * 0.22, cy);
@@ -179,7 +182,7 @@ export function StarfieldCanvas({ className = "", density = "hero" }: StarfieldC
 
       ctx.clearRect(0, 0, width, height);
 
-      const parallaxFactors = [0.25, 0.48, 0.72];
+      const parallaxFactors = [0.34, 0.65, 0.96];
 
       for (let i = 0; i < stars.length; i++) {
         const s = stars[i];
@@ -191,7 +194,7 @@ export function StarfieldCanvas({ className = "", density = "hero" }: StarfieldC
         const px = s.x * width;
 
         const twinkle = Math.sin(time * s.twinkleSpeed * 60 + s.twinkleOffset);
-        const currentAlpha = Math.max(0.12, Math.min(1, s.baseAlpha + twinkle * 0.25));
+        const currentAlpha = Math.max(0.18, Math.min(1, s.baseAlpha + twinkle * 0.15));
 
         ctx.globalAlpha = currentAlpha;
 

@@ -45,11 +45,11 @@ export function PortfolioLayout({
             <Star className="size-4 shrink-0 text-gold" />
             <span className="truncate text-sm font-semibold tracking-wide">{candidate.name}</span>
             <span className="hidden sm:inline text-xs text-mist/70 tracking-normal border-l border-gold/25 pl-2.5">
-              Portfolio
+              Projekt
             </span>
           </a>
 
-          <nav aria-label="Portfolio Navigation" className="flex items-center gap-3 sm:gap-4 text-xs uppercase tracking-wider">
+          <nav aria-label="Projekt-Navigation" className="flex items-center gap-3 sm:gap-4 text-xs uppercase tracking-wider">
             <a
               href="/"
               className="inline-flex items-center gap-1.5 text-mist hover:text-gold transition-colors"
@@ -60,11 +60,11 @@ export function PortfolioLayout({
             </a>
 
             <a
-              href="/projekte"
-              className="inline-flex items-center gap-1.5 border border-gold/40 bg-gold/10 px-2.5 py-1 text-gold hover:bg-gold hover:text-night transition-colors"
+              href="/#projekte"
+              className="inline-flex items-center gap-1.5 border border-gold/50 bg-gold px-2.5 py-1 text-night transition-colors hover:bg-paper hover:border-paper hover:text-night"
             >
               <FolderKanban className="size-3.5" />
-              <span>Alle Projekte</span>
+              <span>Projekte</span>
             </a>
           </nav>
         </div>
@@ -137,10 +137,10 @@ export function PortfolioLayout({
               <Star className="size-3" />
             </div>
             <p className="font-display text-2xl leading-none text-paper md:text-3xl">
-              {candidate.name} · Portfolio
+              {candidate.name} · Projekt
             </p>
             <p className="mt-2 text-sm text-mist max-w-md">
-              Bewerbung für ein Praktikum im Bereich Werbung und Grafik bei MACK Media (Europa-Park Erlebnis-Resort, Rust).
+              Initiativbewerbung im Bereich Werbung und Grafik bei MACK Media (Europa-Park Erlebnis-Resort, Rust).
             </p>
           </div>
 
@@ -153,10 +153,10 @@ export function PortfolioLayout({
               <span>Zum Lebenslauf</span>
             </a>
             <a
-              href="/projekte"
+              href="/#projekte"
               className="text-gold hover:text-paper transition-colors"
             >
-              <span>Alle Projekte</span>
+              <span>Projekte</span>
             </a>
             <a
               href="#top"

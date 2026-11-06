@@ -54,16 +54,22 @@ export const competences = [
 
 export const software = [
   {
-    label: "Adobe Creative Cloud",
-    items: ["Photoshop", "Illustrator", "Premiere Pro", "After Effects"],
+    label: "01 Kreativ- & Medienwerkzeuge",
+    items: [
+      "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "Adobe Lightroom",
+      "Adobe Premiere Pro", "Adobe After Effects", "DaVinci Resolve", "Figma", "Canva", "CapCut",
+    ],
   },
   {
-    label: "Design & Prototyping",
-    items: ["Figma"],
+    label: "02 Technische Kenntnisse",
+    items: ["Python", "JavaScript", "SQL", "PostgreSQL", "Supabase", "Vercel", "Git & GitHub", "REST APIs"],
   },
   {
-    label: "Weitere Tools & KI",
-    items: ["KI-Bildsynthese", "Canva", "CapCut", "PowerPoint"],
+    label: "03 Produktivität, KI & Automatisierung",
+    items: [
+      "Microsoft 365 (Word, Excel, PowerPoint, Outlook)", "OpenAI Codex", "Claude Code",
+      "Google Gemini", "Midjourney", "n8n",
+    ],
   },
 ];
 
@@ -82,7 +88,7 @@ export const workExperience = [
   {
     title: "Mitarbeiter im Restaurantbereich",
     place: "Europa-Park Erlebnis-Resort",
-    meta: "Rust, Deutschland · 2025 – heute",
+    meta: "Rust, Deutschland · Mai 2026 – heute",
     points: [
       "Unterstützung des Restaurantbetriebs im laufenden Tagesgeschäft vor Ort in Rust",
       "Mitarbeit bei der Sicherstellung eines gepflegten und serviceorientierten Gästebereichs",
@@ -92,7 +98,7 @@ export const workExperience = [
   {
     title: "Aushilfe / Verkaufshelfer im Verkaufsraum",
     place: "Karl’s Erlebnis-Dorf",
-    meta: "Juni – Ende August (3 Monate)",
+    meta: "Ferienjob · Juni – Ende August 2024 (3 Monate)",
     points: [
       "Unterstützung im Verkaufsraum und bei der Betreuung der Besucherinnen und Besucher",
     ],
@@ -100,7 +106,7 @@ export const workExperience = [
   {
     title: "Mitarbeiter im Onlinehandel / Operator",
     place: "Kivano.kg",
-    meta: "Bischkek, Kirgisistan · 2025",
+    meta: "Bischkek, Kirgisistan · 2026",
     points: [
       "Mitarbeit in den operativen Abläufen eines etablierten Online-Shops",
       "Bestellabwicklung, Produktpräsentation, Katalogpflege und operative Kundenbetreuung",
@@ -229,6 +235,8 @@ export const projects: ResumeProject[] = [
     title: "Website-Mock-up",
     subtitle: "Verkauf numismatischer Sammlerstücke",
     when: "2024",
+    coverImage: "/portfolio/numizmat (1).png",
+    href: "/projekte/numizmat",
     points: [
       "Konzeption und Gestaltung eines Website-Mock-ups für einen spezialisierten Online-Shop",
     ],

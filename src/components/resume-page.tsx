@@ -5,10 +5,8 @@ import {
   ArrowUp,
   ChevronRight,
   ExternalLink,
-  FolderKanban,
   MapPin,
   Printer,
-  Sparkles,
 } from "lucide-react";
 import {
   candidate,
@@ -30,6 +28,13 @@ const nav = [
   { href: "#projekte", index: "02", label: "Projekte" },
   { href: "#kompetenzen", index: "03", label: "Kompetenzen" },
   { href: "#werdegang", index: "04", label: "Werdegang" },
+];
+
+const mainNav = [
+  { href: "#top", label: "Startseite" },
+  { href: "#projekte", label: "Projekte" },
+  { href: "#kompetenzen", label: "Kompetenzen" },
+  { href: "#werdegang", label: "Werdegang" },
 ];
 
 /** Symmetrical 5-point Star in Europa-Park gold / gilt */
@@ -60,7 +65,7 @@ export function ResumePage() {
 
       {/* STICKY TOP HEADER — Spotless Public Presentation */}
       <header className="no-print sticky top-0 z-40 border-b border-gold/30 bg-night/95 backdrop-blur-md">
-        <div className="mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-5 md:px-10">
+        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-5 md:px-10">
           <a
             href="#top"
             className="flex min-w-0 items-center gap-2.5 text-paper hover:text-gold transition-colors"
@@ -73,28 +78,19 @@ export function ResumePage() {
           </a>
 
           {/* Quick Anchor Nav on Desktop */}
-          <nav aria-label="Schnellnavigation" className="hidden lg:flex items-center gap-5 text-xs uppercase tracking-wider text-mist">
-            {nav.map((item) => (
+          <nav aria-label="Schnellnavigation" className="hidden lg:flex items-center gap-7 text-xs uppercase tracking-wider text-mist">
+            {mainNav.map((item, index) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="hover:text-gold transition-colors"
+                className={`hero-nav-link hover:text-paper transition-colors${index === 0 ? " hero-nav-link-active" : ""}`}
               >
-                <span className="text-gold font-display text-sm mr-1">{item.index}</span>
                 {item.label}
               </a>
             ))}
           </nav>
 
           <div className="flex items-center gap-2.5 shrink-0">
-            <a
-              href="/projekte"
-              className="hidden sm:inline-flex h-9 items-center gap-1.5 border border-gold/40 bg-gold/10 px-3 text-xs font-semibold uppercase tracking-wider text-gold hover:bg-gold hover:text-night transition-colors"
-            >
-              <FolderKanban className="size-3.5" />
-              <span>Portfolio</span>
-            </a>
-
             {/* Print / PDF Export Button */}
             <button
               type="button"
@@ -111,116 +107,98 @@ export function ResumePage() {
 
       <main id="inhalt">
         {/* HERO SECTION — Atmospheric Reflex Blue & Starfield Canvas */}
-        <section id="top" className="sky relative overflow-hidden">
-          <StarfieldCanvas density="hero" />
+        <section id="top" className="sky hero-scene relative isolate overflow-hidden">
+          <div className="hero-art" aria-hidden="true" />
+          <StarfieldCanvas density="hero" className="z-0 opacity-45" />
+          <div className="constellation pointer-events-none absolute inset-0 z-0 opacity-35" aria-hidden="true" />
+          <svg className="hero-star-arc" viewBox="0 0 920 320" aria-hidden="true">
+            <defs>
+              <linearGradient id="orbit-gold" x1="0" x2="1" y1="1" y2="0">
+                <stop offset="0" stopColor="#ffc52e" stopOpacity="0" />
+                <stop offset="0.48" stopColor="#ffc52e" stopOpacity="0.82" />
+                <stop offset="1" stopColor="#ffc52e" stopOpacity="0.08" />
+              </linearGradient>
+            </defs>
+            <path className="orbit-line" d="M 20 280 C 210 105, 390 75, 565 102 S 780 118, 910 18" />
+            <path className="orbit-line orbit-line-secondary" d="M 0 315 C 220 145, 410 120, 610 148 S 810 152, 920 72" />
+            <path className="orbit-star" d="M 292 116 l 7 17 18 1 -14 11 5 18 -16 -10 -16 10 5 -18 -14 -11 18 -1z" />
+            <path className="orbit-star" d="M 690 104 l 4 10 11 1 -9 7 3 11 -9 -6 -9 6 3 -11 -9 -7 11 -1z" opacity=".82" />
+            <circle className="orbit-star" cx="829" cy="94" r="2.6" opacity=".8" />
+          </svg>
 
-          {/* Constellation Fallback Layer */}
-          <div className="constellation pointer-events-none absolute inset-0 opacity-40" aria-hidden="true" />
+          <div className="hero-shell relative z-10 mx-auto flex w-full max-w-6xl flex-col justify-between px-5 md:px-10">
+            <div className="hero-intro rise">
+              <div className="hero-copy min-w-0">
+                <p className="text-xs font-semibold uppercase tracking-widest text-paper">
+                  Initiativbewerbung · {candidate.role} · {candidate.company}
+                </p>
 
-          <div className="relative z-10 mx-auto flex max-w-5xl flex-col gap-12 px-5 py-14 md:flex-row md:items-end md:px-10 md:py-24">
-            <div className="rise min-w-0 flex-1">
-              {/* Symmetrical Europa-Park Sternformation */}
-              <div className="mb-5 flex items-center gap-2 text-gold" aria-hidden="true">
-                <Star className="size-2.5 opacity-80" />
-                <Star className="size-3.5 opacity-90" />
-                <Star className="size-5" />
-                <Star className="size-3.5 opacity-90" />
-                <Star className="size-2.5 opacity-80" />
-              </div>
+                <h1 className="hero-title mt-3 font-display leading-[0.82] break-words text-gold">
+                  <span className="block">{candidate.firstName}</span>
+                  <span className="mt-1 block">{candidate.lastName}</span>
+                </h1>
 
-              <p className="text-xs font-semibold uppercase tracking-widest text-gold">
-                Bewerbung um ein Praktikum · {candidate.role} · {candidate.company}
-              </p>
+                <p className="mt-4 max-w-2xl text-base text-paper leading-relaxed font-sans">
+                  Lebenslauf und Bewerbungsmappe für eine Initiativbewerbung im Bereich Werbung / Grafik bei MACK Media (Europa-Park).
+                  Absolvent der Informationssysteme und Technologien mit Schwerpunkt Medienindustrie; Erfahrung in visueller Gestaltung,
+                  Markenaufbau, Print-Layouts und digitalen Medien.
+                </p>
 
-              {/* Candidate Name: First Name in Paper + Last Name in Italic Gold */}
-              <h1 className="mt-4 font-display text-6xl leading-none break-words text-paper md:text-8xl">
-                <span className="block">{candidate.firstName}</span>
-                <span className="mt-1 block italic text-gold">{candidate.lastName}</span>
-              </h1>
-
-              <p className="mt-6 max-w-xl text-lg text-mist leading-relaxed font-sans">
-                Lebenslauf und Bewerbungsmappe für ein Praktikum im Bereich Werbung / Grafik bei MACK Media (Europa-Park).
-                Absolvent der Informationssysteme und Technologien mit Schwerpunkt Medienindustrie; Erfahrung in visueller Gestaltung,
-                Markenaufbau, Print-Layouts und digitalen Medien.
-              </p>
-
-              {/* Visible Metadata & Location */}
-              <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-mist">
-                <div className="inline-flex items-center gap-1.5 text-gold font-medium">
-                  <MapPin className="size-3.5 shrink-0" aria-hidden="true" />
-                  <span>{candidate.location}</span>
+                <div className="mt-4 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-paper">
+                  <div className="inline-flex items-center gap-2 text-gold font-medium">
+                    <MapPin className="size-4 shrink-0" aria-hidden="true" />
+                    <span>{candidate.location}</span>
+                  </div>
                 </div>
 
-                <a
-                  href="/projekte"
-                  className="inline-flex items-center gap-1.5 text-gold hover:text-paper underline decoration-gold/40 underline-offset-4 transition-colors"
-                >
-                  <FolderKanban className="size-3.5 shrink-0" aria-hidden="true" />
-                  <span>Portfolio ansehen (Case Studies)</span>
-                </a>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <a href="#projekte" className="hero-action hero-action-primary">
+                    <span>Projekte entdecken</span>
+                    <ArrowRight className="size-4" aria-hidden="true" />
+                  </a>
+                  <button type="button" onClick={() => window.print()} className="hero-action hero-action-secondary">
+                    <Printer className="size-4 text-gold" aria-hidden="true" />
+                    <span>Lebenslauf als PDF</span>
+                  </button>
+                </div>
               </div>
+            </div>
 
-              {/* Key Frame Parameters Grid */}
-              <dl className="mt-10 grid grid-cols-2 gap-px bg-gold/50 sm:grid-cols-4 border border-gold/50 shadow-lg">
+            <div className="hero-bottom">
+              <dl className="hero-facts">
                 {[
                   ["Standort", candidate.location.replace(", Deutschland", ", DE")],
-                  ["Beginn", candidate.start],
-                  ["Dauer", candidate.duration],
+                  ["Fokus", candidate.role],
+                  ["Verfügbar", `ab ${candidate.start}`],
                   ["Deutsch", candidate.germanLevel],
                 ].map(([label, value]) => (
-                  <div key={label} className="bg-night/95 px-4 py-3.5 backdrop-blur-sm">
-                    <dt className="text-xs font-semibold uppercase tracking-widest text-gold">
-                      {label}
-                    </dt>
-                    <dd className="mt-1 text-base font-semibold text-paper">{value}</dd>
+                  <div key={label} className="hero-fact">
+                    <dt>{label}</dt>
+                    <dd>{value}</dd>
                   </div>
                 ))}
               </dl>
+
+              <nav aria-label="Inhaltsverzeichnis" className="hero-contents">
+                <div className="flex items-center justify-between border-b border-gold/25 pb-3">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-paper">Inhaltsverzeichnis</p>
+                  <a href="#werdegang" className="hero-contents-link">
+                    Lebenslauf <ArrowRight className="size-3.5" aria-hidden="true" />
+                  </a>
+                </div>
+                <ol className="hero-contents-list">
+                  {nav.map((item) => (
+                    <li key={item.href}>
+                      <a href={item.href} className="group">
+                        <span className="font-semibold text-gold">{item.index}</span>
+                        <span>{item.label}</span>
+                        <ChevronRight className="size-3.5 text-gold transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
             </div>
-
-            {/* Editorial Table of Contents Panel */}
-            <nav
-              aria-label="Inhaltsverzeichnis"
-              className="w-full shrink-0 border border-gold/40 bg-night/90 p-5 md:w-80 md:p-6 backdrop-blur-sm shadow-xl"
-            >
-              <div className="flex items-center justify-between border-b border-gold/25 pb-3">
-                <p className="text-xs font-semibold uppercase tracking-widest text-gold">
-                  Inhaltsverzeichnis
-                </p>
-                <span className="text-xs text-mist/60 uppercase">Lebenslauf</span>
-              </div>
-              <ol className="mt-2">
-                {nav.map((item) => (
-                  <li key={item.href}>
-                    <a
-                      href={item.href}
-                      className="group flex items-center justify-between gap-4 border-t border-gold/20 py-3.5 text-paper hover:text-gold transition-colors"
-                    >
-                      <span className="flex items-baseline gap-3">
-                        <span className="font-display text-2xl leading-none text-gold group-hover:translate-x-1 transition-transform">
-                          {item.index}
-                        </span>
-                        <span className="text-base font-medium">{item.label}</span>
-                      </span>
-                      <ChevronRight className="size-4 text-gold group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                    </a>
-                  </li>
-                ))}
-              </ol>
-
-              <div className="mt-4 pt-3 border-t border-gold/20">
-                <a
-                  href="/projekte"
-                  className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-gold hover:text-paper transition-colors py-1"
-                >
-                  <span className="flex items-center gap-2">
-                    <Sparkles className="size-3.5" />
-                    <span>Portfolio & Case Studies</span>
-                  </span>
-                  <ArrowRight className="size-3.5" />
-                </a>
-              </div>
-            </nav>
           </div>
         </section>
 
@@ -315,7 +293,7 @@ export function ResumePage() {
                       <div className="mt-5">
                         <a
                           href={caseHref}
-                          className="inline-flex items-center gap-2 border border-reflex bg-reflex/5 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-reflex hover:bg-reflex hover:text-paper transition-colors"
+                          className="inline-flex items-center gap-2 border border-reflex bg-reflex px-4 py-2 text-xs font-semibold uppercase tracking-widest text-paper hover:bg-reflex/90 hover:text-paper focus-visible:text-paper transition-colors"
                         >
                           <span>Detaillierten Case ansehen</span>
                           <ArrowRight className="size-3.5" />
@@ -328,17 +306,6 @@ export function ResumePage() {
             })}
           </div>
 
-          {/* Bottom link to portfolio overview */}
-          <div className="mt-8 flex justify-center">
-            <a
-              href="/projekte"
-              className="inline-flex items-center gap-2 border border-reflex bg-reflex px-6 py-3.5 text-xs font-semibold uppercase tracking-widest text-paper hover:bg-night transition-colors shadow-md"
-            >
-              <FolderKanban className="size-4" />
-              <span>Alle Arbeiten im Portfolio-Überblick ansehen</span>
-              <ArrowRight className="size-4" />
-            </a>
-          </div>
         </Section>
 
         {/* SECTION 03 — KOMPETENZEN & SOFTWARE */}
@@ -443,7 +410,7 @@ export function ResumePage() {
         <StarfieldCanvas density="footer" />
         <div className="constellation pointer-events-none absolute inset-0 opacity-40" aria-hidden="true" />
 
-        <div className="relative z-10 mx-auto flex max-w-5xl flex-col gap-6 px-5 py-14 md:flex-row md:items-end md:justify-between md:px-10">
+        <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-5 py-14 md:flex-row md:items-end md:justify-between md:px-10">
           <div>
             <div className="mb-4 flex items-center gap-2 text-gold" aria-hidden="true">
               <Star className="size-3" />
@@ -451,10 +418,7 @@ export function ResumePage() {
               <Star className="size-3" />
             </div>
             <p className="font-display text-3xl leading-none text-paper md:text-4xl">
-              Bewerbung um ein Praktikum ab {candidate.start} · {candidate.company}
-            </p>
-            <p className="mt-3 max-w-md text-base text-mist">
-              {candidate.duration} im Bereich {candidate.role}. {candidate.resort}.
+              Initiativbewerbung · {candidate.company}
             </p>
           </div>
 
@@ -465,13 +429,6 @@ export function ResumePage() {
             >
               <ArrowUp className="size-3.5" aria-hidden="true" />
               <span>Nach oben</span>
-            </a>
-
-            <a
-              href="/projekte"
-              className="no-print text-xs uppercase tracking-wider text-gold hover:text-paper transition-colors"
-            >
-              Portfolio & Case Studies →
             </a>
 
             <p className="text-xs text-mist/60 mt-1">
@@ -532,7 +489,7 @@ function Section({
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
     >
-      <div className="mx-auto max-w-5xl px-5 py-14 md:px-10 md:py-20">
+      <div className="mx-auto max-w-6xl px-5 py-14 md:px-10 md:py-20">
         <div className="mb-8 flex items-end gap-4">
           <span className="font-display text-5xl leading-none text-reflex">{index}</span>
           <div>
